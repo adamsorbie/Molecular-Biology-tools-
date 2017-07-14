@@ -1,5 +1,7 @@
 import sys
-def dil_vol_calc(a,b,c):
+
+
+def dil_vol_calc(a, b, c):
     x = (a * b) / c
     return x
 
@@ -17,7 +19,8 @@ if "dilution" or "dilution " or "dilutions" or "Dilution" in calc:
     V2 = float(raw_input("Enter V2: "))
     C2 = float(raw_input("Enter C2: "))
     ans = dil_vol_calc(V2, C2, C1)
-    print(str(ans) + str(units) + ", diluent =" + " " + str(V2 - ans) + str(units))
+    diluent = V2 - ans
+    print("%.3f" % ans + str(units) + ", diluent =" + " " + "%.3f" % diluent + units)
 
 else:
     print("Error")
