@@ -44,18 +44,21 @@ if calc == "Dilution":
     ans = dil_vol_calc(V2, C2, C1)
     diluent = V2 - ans
     print("%.3f" % ans + str(units) + ", diluent =" + " " + "%.3f" % diluent + units)
+    sys.exit()
 
 elif calc == "Mass":
     m = float(raw_input("Enter concentration in molar: "))
     v = float(raw_input("Enter volume in L: "))
     ans = no_of_moles(m, v)
     print(ans)
+    sys.exit()
 
 elif calc == "Moles":
     no_moles = float(raw_input("Enter number of moles: "))
     molecular_weight = float(raw_input("Enter molecular weight: "))
     ans = mass_grams(no_moles, molecular_weight)
     print(ans)
+    sys.exit()
 
 else:
     print("Error")
