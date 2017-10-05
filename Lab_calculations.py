@@ -41,10 +41,13 @@ if calc == "1":
     C1 = float(raw_input("Enter C1: "))
     V2 = float(raw_input("Enter V2: "))
     C2 = float(raw_input("Enter C2: "))
-    ans = dil_vol_calc(V2, C2, C1)
-    diluent = V2 - ans
-    print("%.3f" % ans + str(units) + ", diluent =" + " " + "%.3f" % diluent + units)
-    sys.exit()
+    if C2 > C1:
+        print("Error, concentration of  C2 cannot be higher than C1")
+    else: 
+        ans = dil_vol_calc(V2, C2, C1)
+        diluent = V2 - ans
+        print("%.3f" % ans + str(units) + ", diluent =" + " " + "%.3f" % diluent + units)
+        sys.exit()
 
 elif calc == "2":
     m = float(raw_input("Enter concentration in molar: "))
